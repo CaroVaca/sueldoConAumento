@@ -10,18 +10,21 @@ rotulo.innerHTML = "Ingrese el salario actual del empleado:";
 
 btnEnviar.addEventListener("click", () => {
   let sueldoActual: number = Number(dato.value);
+  let aumento: number = 0;
 
   if (sueldoActual > 0 && sueldoActual <= 15000) {
-    sueldoActual = (sueldoActual * 20) / 100;
-    console.log("Usted tiene un aumento del 20%");
+    sueldoActual = sueldoActual + (sueldoActual * 20) / 100;
+    aumento = aumento + sueldoActual;
+    console.log("Usted tiene un aumento del 20% " + aumento);
   } else if (sueldoActual > 15.001 && sueldoActual <= 20000) {
-    sueldoActual = (sueldoActual * 10) / 100;
-    console.log("Usted tiene un aumento del 10%");
+    sueldoActual = sueldoActual + (sueldoActual * 10) / 100;
+    aumento = aumento + sueldoActual;
+    console.log("Usted tiene un aumento del 10% " + aumento);
   } else if (sueldoActual > 20001 && sueldoActual <= 25000) {
-    sueldoActual = (sueldoActual * 5) / 100;
-    console.log("Usted tiene un aumento del 5%");
+    sueldoActual = sueldoActual + (sueldoActual * 5) / 100;
+    aumento = aumento + sueldoActual;
+    console.log("Usted tiene un aumento del 5% " + aumento);
   } else {
-    sueldoActual = sueldoActual;
-    console.log("Usted no tiene aumento");
+    console.log("Usted no tiene aumento " + sueldoActual);
   }
 });
